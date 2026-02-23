@@ -1,0 +1,1 @@
+# VM creation script (placeholder)
