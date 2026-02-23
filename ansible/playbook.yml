@@ -1,0 +1,8 @@
+# Ansible playbook placeholder
+- name: Install and configure Zabbix Agent
+  hosts: all
+  become: yes
+  tasks:
+    - name: Example task
+      debug:
+        msg: "Ansible is working"
