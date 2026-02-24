@@ -47,8 +47,17 @@ PowerShell + Zabbix API → Cleanup
 ---
 
 ## 📷 Screenshots
+### 🔹 VM Creation (PowerShell)
+![PowerShell VM](screenshots/Powershell-create.png)
 
-Se mappen `/screenshots` för bilder från projektet.
+### 🔹 Ansible Automation
+![Ansible Run](screenshots/Ansible-run.png)
+
+### 🔹 Zabbix Monitoring Active
+![Zabbix Dashboard](screenshots/Zabbix-dashboard-active.PNG)
+
+### 🔹 Zabbix API Cleanup
+![Zabbix Cleanup](screenshots/Zabbix-api-cleanup.png)
 
 ---
 
