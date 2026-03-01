@@ -43,6 +43,44 @@ devops-examensarbete/
 
 ---
 
+## ▶️ How to Run (High-Level Overview)
+
+### 1️⃣ Create Virtual Machine
+Run the PowerShell script:
+
+.\create-vm.ps1 -VMName TestVM
+
+
+2️⃣ Install Zabbix Agent with Ansible
+
+From the Ansible controller:
+```Bash
+ansible-playbook playbook.yml --ask-pass --ask-become-pass
+```
+
+3️⃣ Verify Monitoring in Zabbix
+
+Log in to the Zabbix Web GUI
+
+Navigate to Monitoring → Hosts
+
+Verify that the host status is Available
+
+4️⃣ Cleanup VM + Monitoring
+
+Run the cleanup script:
+
+.\remove-host.ps1
+
+This removes:
+
+The virtual machine (Hyper-V)
+
+The Zabbix host entry via API
+
+All related monitoring data
+
+
 ## 🧱 Arkitektur (Förenklad)
 
 PowerShell → Hyper-V → Ubuntu VM  
