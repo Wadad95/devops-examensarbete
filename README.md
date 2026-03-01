@@ -1,12 +1,27 @@
 # DevOps Examensarbete – Automated VM Lifecycle & Monitoring
 
 ## 📌 Projektöversikt
+
 Detta examensarbete demonstrerar ett komplett automatiserat flöde för livscykelhantering av virtuella maskiner med integrerad övervakning.
 
 Projektet kombinerar Infrastructure as Code, konfigurationshantering och API-integration.
 
 ---
 
+## 📂 Project Structure
+
+devops-examensarbete/
+├── scripts/
+│ └── powershell/
+│ └── create-vm.ps1
+├── ansible/
+│ └── playbook.yml
+├── zabbix-api/
+│ └── remove-host.ps1
+├── screenshots/
+└── README.md
+
+-----
 ## ⚙️ Funktionalitet
 
 1. Virtuella maskiner skapas automatiskt i Hyper-V (PowerShell)
