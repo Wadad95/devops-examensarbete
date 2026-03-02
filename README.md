@@ -43,42 +43,54 @@ devops-examensarbete/
 
 ---
 
-## ▶️ How to Run (High-Level Overview)
+---
 
-### 1️⃣ Create Virtual Machine
-Run the PowerShell script:
+## ▶️ Så kör du projektet (Översikt)
 
-.\create-vm.ps1 -VMName TestVM
+### 1️⃣ Skapa virtuell maskin
 
+Kör PowerShell-skriptet:
 
-2️⃣ Install Zabbix Agent with Ansible
-
-From the Ansible controller:
-```Bash
-ansible-playbook playbook.yml --ask-pass --ask-become-pass
+```powershell
+.\create-vm.ps1 -VMName TestVM -TemplateVHD "C:\EXarbete-VM\VM4\VM4.vhdx"
 ```
 
-3️⃣ Verify Monitoring in Zabbix
 
-Log in to the Zabbix Web GUI
 
-Navigate to Monitoring → Hosts
+2️⃣ Installera Zabbix Agent med Ansible
 
-Verify that the host status is Available
+Från Ansible-kontrollnoden:
 
-4️⃣ Cleanup VM + Monitoring
+ansible-playbook playbook.yml --ask-pass --ask-become-pass
 
-Run the cleanup script:
 
-.\remove-host.ps1
+3️⃣ Verifiera övervakning i Zabbix
 
-This removes:
+Logga in i Zabbix Web GUI
 
-The virtual machine (Hyper-V)
+Navigera till Monitoring → Hosts
 
-The Zabbix host entry via API
+Kontrollera att hostens status är Available
 
-All related monitoring data
+4️⃣ Ta bort VM + övervakning
+
+Kör rensningsskriptet:
+
+```
+.\remove-host.ps1 `
+    -HostName "TestVM" `
+    -ZabbixURL "http://<ZABBIX_SERVER>/zabbix/api_jsonrpc.php" `
+    -ZabbixUser "<API_USER>" `
+    -ZabbixPassword "<API_PASSWORD>"
+```
+
+Detta tar bort:
+
+Den virtuella maskinen i Hyper-V
+
+Host-objektet i Zabbix via API
+
+All relaterad övervakningsdata
 
 
 ## 🧱 Arkitektur (Förenklad)
